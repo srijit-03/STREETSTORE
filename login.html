@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | F1 STREET</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="body">
+  <header class="navbar">
+    <h1>STREETSTORE</h1>
+    <div class="search-container">
+      <input type="text" placeholder="Search products..." />
+      <button type="submit" class="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+    
+    <nav class="nav-links">
+      <div class="wistlist">
+      <i class="fa-regular fa-heart"></i>
+    </div>
+      <a class="cart" href="">
+        <i class="fa-solid fa-cart-shopping"></i>Cart
+      </a>
+      <a href="logo.html" class="login">Login</a>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <form class="login-form">
+        <h1>STREETSTORE</h1>
+      <h2>Welcome Back</h2>
+      <p class="login-des">Sign in to your account</p>
+
+      <label for="email">Email Address</label>
+      <div class="input-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" id="email" placeholder="your@email.com" required>
+      </div>
+
+      <label for="password">Password</label>
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="password" placeholder="••••••••" required>
+        <i class="fa-regular fa-eye eye-icon"></i>
+      </div>
+
+      <div class="options">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="forgot.html" class="forgot">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="sign-in">Sign In</button>
+
+      <p class="signup-text">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </form>
+  </div>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>Your go-to destination for StreetStore and accessories. Fast fashion, literally.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#">Tees</a></li>
+        <li><a href="#">Jackets</a></li>
+        <li><a href="#">Caps</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Customer Support</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Streetstore. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwfEOSaE52bfFHWCR369lxTvxFHtEGUhQ2vEsn9Hf9JLePEG9mdjrj_ans9HMYuH9GX/exec';
+
+document.querySelector(".login-form").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  const formData = new URLSearchParams();
+  formData.append("action", "login");
+  formData.append("email", email);
+  formData.append("password", password);
+
+  try {
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      body: formData
+    });
+
+    const result = await response.text();
+
+    if (result === "SUCCESS") {
+      alert("Login successful!");
+      window.location.href = "index.html";
+    } else {
+      alert("Invalid email or password.");
+    }
+  } catch (error) {
+    console.error("Error!", error.message);
+    alert("Login failed.");
+  }
+});
+</script>
+</body>
+</html>
