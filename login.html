@@ -26,7 +26,7 @@
       <a class="cart" href="">
         <i class="fa-solid fa-cart-shopping"></i>Cart
       </a>
-      <a href="logo.html" class="login">Login</a>
+      <a href="login.html" class="login">Login</a>
     </nav>
   </header>
 
@@ -102,40 +102,6 @@
   </div>
 </footer>
 
-<script>
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwfEOSaE52bfFHWCR369lxTvxFHtEGUhQ2vEsn9Hf9JLePEG9mdjrj_ans9HMYuH9GX/exec';
-
-document.querySelector(".login-form").addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  const formData = new URLSearchParams();
-  formData.append("action", "login");
-  formData.append("email", email);
-  formData.append("password", password);
-
-  try {
-    const response = await fetch(scriptURL, {
-      method: 'POST',
-      body: formData
-    });
-
-    const result = await response.text();
-
-    if (result === "SUCCESS") {
-      alert("Login successful!");
-      window.location.href = "index.html";
-    } else {
-      alert("Invalid email or password.");
-    }
-  } catch (error) {
-    console.error("Error!", error.message);
-    alert("Login failed.");
-  }
-});
-</script>
 </body>
 </html>

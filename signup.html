@@ -27,7 +27,7 @@
       <a class="cart" href="">
         <i class="fa-solid fa-cart-shopping"></i>Cart
       </a>
-      <a href="logo.html" class="login">Login</a>
+      <a href="login.html" class="login">Login</a>
     </nav>
   </header>
 
@@ -68,7 +68,7 @@
 
       <button type="submit" class="btn">Create Account</button>
 
-      <p class="signin-link">Already have an account? <a href="logo.html">Sign in</a></p>
+      <p class="signin-link">Already have an account? <a href="login.html">Sign in</a></p>
     </form>
   </div>
 
@@ -114,50 +114,7 @@
   </div>
 </footer>
 
-<script>
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwfEOSaE52bfFHWCR369lxTvxFHtEGUhQ2vEsn9Hf9JLePEG9mdjrj_ans9HMYuH9GX/exec';
 
-document.querySelector(".signup-form").addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const confirmPassword = document.getElementById("confirm-password").value.trim();
-
-  if (password !== confirmPassword) {
-    alert("Passwords do not match!");
-    return;
-  }
-
-  const formData = new URLSearchParams();
-  formData.append("action", "signup");
-  formData.append("name", name);
-  formData.append("email", email);
-  formData.append("password", password);
-
-  try {
-    const response = await fetch(scriptURL, {
-      method: 'POST',
-      body: formData
-    });
-
-    const result = await response.text();
-
-    if (result === "SUCCESS") {
-      alert("Account created successfully!");
-      window.location.href = "index.html";
-    } else if (result === "EXISTS") {
-      alert("Account already exists. Please login.");
-    } else {
-      alert("Error: Something went wrong.");
-    }
-  } catch (error) {
-    console.error("Error!", error.message);
-    alert("Submission failed.");
-  }
-});
-</script>
 
 </body>
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="body">
+    <header class="navbar">
+        <h1>STREETSTORE</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search products..." />
+            <button type="submit" class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <nav class="nav-links">
+            <div class="wistlist">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+            <a class="cart" href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>Cart
+            </a>
+            <a href="logo.html" class="login">Login</a>
+        </nav>
+    </header>
+
+    <div class="cart-page">
+        <div class="cart-container">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src=""
+                                alt="Black Tees">
+                            <p>Black Tees</p>
+                            <small>price: 20.00</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>$20.00</td>
+                </tr>
+            </table>
+        </div>
+        <div class="total-price">
+            <h1>Order Summary</h1>
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>20.00</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>20.00</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>20.00</td>
+                </tr>
+            </table>
+            <button class="checkout">Proceed to Checkout</button>
+            <a href="product.html" class="Shopping">Continue Shopping</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>Your go-to destination for StreetStore and accessories. Fast fashion, literally.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Tees</a></li>
+                    <li><a href="#">Jackets</a></li>
+                    <li><a href="#">Caps</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Streetstore. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
