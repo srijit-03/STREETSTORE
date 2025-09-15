@@ -4,17 +4,20 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #ffffff;
-}
-
 .navbar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 4.5rem;
+  height: 5rem;
   background-color: rgb(12, 14, 39);
   color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 4px 6px #888;
 }
 
 .search-container {
@@ -91,27 +94,8 @@ a {
 
 .hero img {
   height: 70vh;
-  width: 100vw;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container button {
-  margin: 4rem;
-  padding: 0.6em 1.5em;
-  font-size: 1.6rem;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  transition: background-color 0.2s ease;
-  background-color: red;
-  color: #fff;
-  display: flex;
-  align-items: center;
+  width: 90vw;
+  margin: 8rem 4.2rem;
 }
 
 .categories h2 {
@@ -128,15 +112,16 @@ a {
 }
 
 .category-card {
-  width: 25rem;
-  height: 28rem;
+  width: 18rem;
+  height: 26rem;
   margin-top: 2.5rem;
   border-radius: 4px;
+  background-color: beige;
 }
 
 .card-img img {
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   border-radius: 5px;
 }
 
@@ -144,18 +129,18 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 #fade {
-opacity: 0.5;
+  opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
 }
 
 .category-card p {
   font-size: 2rem;
-  padding-left: 2.3rem;
-  padding-top: 1rem;
+  text-align: center;
+  padding-top: 1.5rem;
 }
 
 /*                                              footer section                                                */
@@ -164,7 +149,7 @@ opacity: 0.5;
   background-color: #111;
   color: #eee;
   padding: 40px 20px 10px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .footer-container {
@@ -234,22 +219,16 @@ opacity: 0.5;
   padding-top: 15px;
 }
 
+/*                                              product section                                                */
 
-/*                                             category section                                        */
 .body {
-  background-color: #f2f2f2;
+  background-color: #e2e2e2;
 }
 
 .categories h1 {
   text-align: center;
   font-size: 4.5rem;
-  margin-top: 3rem;
-}
-
-.des {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 2rem;
+  margin-top: 7rem;
 }
 
 .product-card {
@@ -273,6 +252,14 @@ opacity: 0.5;
   border-top-right-radius: 10px;
 }
 
+#p-nam {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 22rem;
+}
 .para {
   font-size: 2rem;
   padding-top: 1rem;
@@ -301,18 +288,16 @@ opacity: 0.5;
   margin-top: 1.3rem;
 }
 
-/*                                              product section                                                */
-
 .search-sec {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 5.4rem;
-    margin-top: 3rem;
-    height: 6rem;
-    background-color: rgb(255, 255, 255);
-    width: 88.2%;
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5.4rem;
+  margin-top: 3rem;
+  height: 6rem;
+  background-color: rgb(255, 255, 255);
+  width: 88.2%;
+  border-radius: 10px;
 }
 
 .search-section {
@@ -346,9 +331,9 @@ opacity: 0.5;
 }
 
 .option {
-    height: 35px;
-    border-radius: 7px;
-    margin-right: 2.5rem;
+  height: 35px;
+  border-radius: 7px;
+  margin-right: 2.5rem;
 }
 
 /*                                    product details section                                     */
@@ -477,12 +462,12 @@ opacity: 0.5;
 }
 
 .wishlist {
-      background: #fff;
-    border: 1px solid #ccc;
-    padding: 14px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.5rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 14px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
 .features {
@@ -503,20 +488,22 @@ opacity: 0.5;
   display: block;
 }
 
-
 /*                                              cart section                                       */
 
-.cart-page {
+.cart-sec {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 4rem;
 }
 
 .cart-container {
-    background-color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    width: 50%;
-    margin-left: 8rem;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 50%;
+  height: 50vh;
+  margin-left: 8rem;
+  overflow: auto;
 }
 
 .cart-container table {
@@ -541,7 +528,7 @@ opacity: 0.5;
 .cart-info {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 40px;
 }
 
 .cart-info img {
@@ -567,6 +554,7 @@ opacity: 0.5;
   color: #d00;
   font-size: 14px;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
 input[type="number"] {
@@ -584,14 +572,14 @@ input[type="number"] {
 }
 
 .total-price {
-    margin-right: 7rem;
-    width: 24rem;
-    height: 30rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+  margin-right: 7rem;
+  width: 24rem;
+  height: 30rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .total-price table {
@@ -604,10 +592,10 @@ input[type="number"] {
 }
 
 .total-price tr:last-child td {
- font-weight: bold;
-    font-size: 2rem;
-    border-top: 3px solid #ccc;
-    padding-top: 12px;
+  font-weight: bold;
+  font-size: 2rem;
+  border-top: 3px solid #ccc;
+  padding-top: 12px;
 }
 
 .checkout {
@@ -621,7 +609,7 @@ input[type="number"] {
   color: #fff;
   display: flex;
   align-items: center;
-  margin: 1rem 2.1rem;
+  margin: 2rem 3.85rem;
 }
 
 .Shopping {
@@ -633,40 +621,37 @@ input[type="number"] {
 
 /*                                        logo section                                         */
 
-
 .login-container {
-background: #fff;
-    padding: 40px 30px;
-    border-radius: 12px;
-    max-width: 30%;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-    margin: auto;
-    margin-top: 5rem;
-    height: 75vh;
-    margin-bottom: 5rem;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 30%;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-top: 5rem;
+  height: 75vh;
+  margin-bottom: 5rem;
 }
 
 .login-form h1 {
-     font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-
 .login-form h2 {
-    font-size: 35px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 .login-des {
-font-size: 25px;
-    color: #6a6666;
-    margin-bottom: 40px;
-    text-align: center;
-    margin-top: 20px;
-    
+  font-size: 25px;
+  color: #6a6666;
+  margin-bottom: 40px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 label {
@@ -755,13 +740,12 @@ label {
 
 /*                                     signup section                               */
 
-
 .signup-container {
   background-color: #fff;
   padding: 40px 30px;
   max-width: 420px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: auto;
   margin-top: 5rem;
@@ -816,11 +800,11 @@ label {
 }
 
 .checkbox {
-    margin: 20px 0;
-    text-align: left;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-evenly;
+  margin: 20px 0;
+  text-align: left;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .checkbox a {

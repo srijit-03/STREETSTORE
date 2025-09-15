@@ -1,13 +1,13 @@
 [
     {
         "id": 1,
-        "name": "Red T-Shirt",
+        "name": "Men Slim Fit Solid Spread Collar Formal Shirt",
         "price": 200,
         "img": "red.jpg"
     },
     {
         "id": 2,
-        "name": "Black T-Shirt",
+        "name": "Men Regular Fit Geometric Print Spread Collar Casual Shirt",
         "price": 250,
         "img": "black.jpg"
     },
