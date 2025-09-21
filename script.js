@@ -5,33 +5,30 @@ let products = [];
 let carts = JSON.parse(localStorage.getItem("carts")) || []; 
 
 
-const listProductHTML = () => {
-  if (!productHtml) return; 
+const listProductHTML = (start = 0) => {
   productHtml.innerHTML = "";
+  const limitedProducts = products.slice(start, start + 6);
 
-  if (products.length > 0) {
-    const limitedProducts = products.slice(0, 6);
-    limitedProducts.forEach(product => {
-      let newProduct = document.createElement('div');
-      newProduct.classList.add('product-card');
-      newProduct.dataset.id = product.id;
-
-      newProduct.innerHTML = `
-        <div class="card-pic">
-          <img src="${product.img}" alt="${product.name}">
-        </div>
-        <p class="para" id="p-nam">${product.name}</p>
-        <div class="price-cart">
-          <p class="para">$${product.price}</p>
-          <button class="add-to-cart">
-            <i class="fa-solid fa-cart-shopping"></i> Cart
-          </button>
-        </div>
-      `;
-      productHtml.appendChild(newProduct);
-    });
-  }
+  limitedProducts.forEach(product => {
+    let newProduct = document.createElement("div");
+    newProduct.classList.add("product-card");
+    newProduct.innerHTML = `
+      <div class="card-pic">
+        <img src="${product.img}" alt="${product.name}">
+      </div>
+      <p class="para">${product.name}</p>
+      <div class="price-cart">
+        <p class="para">$${product.price}</p>
+        <button class="add-to-cart">
+          <i class="fa-solid fa-cart-shopping"></i> Cart
+        </button>
+      </div>
+    `;
+    productHtml.appendChild(newProduct);
+  });
 };
+
+
 
 
 if (productHtml) {
@@ -178,15 +175,20 @@ const saveCart = () => {
 };
 
 
+const params = new URLSearchParams(window.location.search);
+const page = parseInt(params.get("page")) || 1;
+const startIndex = (page - 1) * 6;
+
 const initApp = () => {
   fetch("products.json")
     .then(response => response.json())
     .then(data => {
       products = data;
-      listProductHTML(); 
-      addToCartHTML();  
+      listProductHTML(startIndex); 
+      addToCartHTML();
     })
     .catch(error => console.error("Error loading products:", error));
 };
 
 initApp();
+

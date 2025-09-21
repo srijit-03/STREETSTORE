@@ -3,13 +3,13 @@
         "id": 1,
         "name": "Men Slim Fit Solid Spread Collar Formal Shirt",
         "price": 200,
-        "img": "red.jpg"
+        "img": "https://tse4.mm.bing.net/th/id/OIP.Gf4VDypHEW8JpkXwYhtfbQHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3"
     },
     {
         "id": 2,
         "name": "Men Regular Fit Geometric Print Spread Collar Casual Shirt",
         "price": 250,
-        "img": "black.jpg"
+        "img": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/21902514/2024/6/3/53783c19-e421-4fa2-babb-b159da0a1a841717412018863MuftiTrimSlimFitFloralSheerPrintedCasualShirt1.jpg"
     },
     {
         "id": 3,
@@ -31,6 +31,80 @@
     },
     {
         "id": 6,
+        "name": "Blue T-Shirt",
+        "price": 450,
+        "img": "blue.jpg"
+    },  
+
+     {
+        "id": 7,
+        "name": "red tees",
+        "price": 200,
+        "img": "red.jpg"
+    },
+    {
+        "id": 8,
+        "name": "black teest",
+        "price": 250,
+        "img": "black.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Yellow T-Shirt",
+        "price": 300,
+        "img": "yellow.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Green T-Shirt",
+        "price": 350,
+        "img": "green.jpg"
+    },
+    {
+        "id": 11,
+        "name": "White T-Shirt",
+        "price": 400,
+        "img": "white.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Blue T-Shirt",
+        "price": 450,
+        "img": "blue.jpg"
+    },
+
+     {
+        "id": 13,
+        "name": "thtsh",
+        "price": 200,
+        "img": "red.jpg"
+    },
+    {
+        "id": 14,
+        "name": "ryedr",
+        "price": 250,
+        "img": "black.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Yellow T-Shirt",
+        "price": 300,
+        "img": "yellow.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Green T-Shirt",
+        "price": 350,
+        "img": "green.jpg"
+    },
+    {
+        "id": 17,
+        "name": "White T-Shirt",
+        "price": 400,
+        "img": "white.jpg"
+    },
+    {
+        "id": 18,
         "name": "Blue T-Shirt",
         "price": 450,
         "img": "blue.jpg"
