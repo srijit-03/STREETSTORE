@@ -59,16 +59,14 @@ const addToCart = (product_id) => {
 
 
 const addToCartHTML = () => {
-//  if (!listCartHTML) return; 
-listCartHTML.innerHTML = "";
+  if (!listCartHTML) return;
+  listCartHTML.innerHTML = "";
 
-if (carts.length > 0) {
-  let subtotal = 0;
+  if (carts.length > 0) {
+    let subtotal = 0;
 
-  
-  let cartContainer = document.createElement("div");
-  cartContainer.classList.add("cart-page");
-  cartContainer.classList.add("cart-container");
+    let cartContainer = document.createElement("div");
+  cartContainer.classList.add("cart-page", "cart-container");
   cartContainer.innerHTML = `
     <table>
       <thead>
@@ -84,7 +82,6 @@ if (carts.length > 0) {
 
   let tbody = cartContainer.querySelector(".cart-body");
 
-  
   carts.forEach(cart => {
     let info = products.find(p => p.id == cart.product_id);
     if (!info) return;
@@ -108,8 +105,9 @@ if (carts.length > 0) {
       <td>$${itemSubtotal.toFixed(2)}</td>
     `;
     tbody.appendChild(row);
-    });
-     let totalDiv = document.createElement("div");
+  });
+
+  let totalDiv = document.createElement("div");
   totalDiv.classList.add("total-price");
   totalDiv.innerHTML = `
     <h1>Price Details</h1>
@@ -130,7 +128,8 @@ if (carts.length > 0) {
   listCartHTML.appendChild(cartContainer);
   listCartHTML.appendChild(totalDiv);
 
-  
+
+    // Remove item
     listCartHTML.querySelectorAll(".remove-item").forEach(btn => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -141,9 +140,9 @@ if (carts.length > 0) {
       });
     });
 
-   
+    // Update quantity
     listCartHTML.querySelectorAll(".quantity-input").forEach(input => {
-      input.addEventListener("change", (e) => {
+      input.addEventListener("change", () => {
         let id = input.dataset.id;
         let cartItem = carts.find(item => item.product_id == id);
         if (cartItem) {
@@ -153,24 +152,25 @@ if (carts.length > 0) {
         }
       });
     });
+
   } else {
-    
+    // Show empty cart message
     let emptyRow = document.createElement("div");
+    
     emptyRow.innerHTML = `
-    <div style="text-align:center; font-size:2rem; height:65vh; width:100vw; margin-top:13rem">
-    <span style="font-size:10rem;margin-bottom:1rem;">🛒</span>
-      <p style="">
-         Your cart is empty.
-        </p> 
+      <div style="text-align:center; font-size:2rem; height:65vh; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <span style="font-size:8rem;margin-bottom:1rem;">🛒</span>
+        <p>Your cart is empty.</p> 
         <button onclick="window.location.href='index.html'" 
-        style="padding:10px 20px;font-size:1rem;background:#007bff;color:white;border:none;border-radius:5px;cursor:pointer;">
-        Shop Now
-      </button>
+          style="padding:10px 20px;font-size:1rem;background:#007bff;color:white;border:none;border-radius:5px;cursor:pointer;">
+          Shop Now
+        </button>
       </div>
     `;
     listCartHTML.appendChild(emptyRow);
   }
 };
+ 
 
 
 const saveCart = () => {
@@ -194,9 +194,9 @@ const initApp = () => {
     .catch(error => console.error("Error loading products:", error));
 };
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  initApp();
-});
+initApp();
+// document.addEventListener("DOMContentLoaded", () => {
+//   initApp();
+// });
 
 
