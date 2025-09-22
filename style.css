@@ -230,7 +230,7 @@ a {
 
 .product-card {
   width: 25rem;
-  height: 29rem;
+  height: 31rem;
   margin-top: 4.5rem;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
@@ -251,7 +251,7 @@ a {
 }
 
 #p-nam {
-  font-size: 1rem;
+  font-size: 1.5rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

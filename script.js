@@ -6,17 +6,19 @@ let carts = JSON.parse(localStorage.getItem("carts")) || [];
 
 
 const listProductHTML = (start = 0) => {
+  if (!productHtml) return;  // ✅ prevent error on cart page
   productHtml.innerHTML = "";
   const limitedProducts = products.slice(start, start + 6);
 
   limitedProducts.forEach(product => {
     let newProduct = document.createElement("div");
     newProduct.classList.add("product-card");
+    newProduct.dataset.id = product.id;
     newProduct.innerHTML = `
       <div class="card-pic">
         <img src="${product.img}" alt="${product.name}">
       </div>
-      <p class="para">${product.name}</p>
+      <p class="para" id="p-nam">${product.name}</p>
       <div class="price-cart">
         <p class="para">$${product.price}</p>
         <button class="add-to-cart">
@@ -27,6 +29,7 @@ const listProductHTML = (start = 0) => {
     productHtml.appendChild(newProduct);
   });
 };
+
 
 
 
@@ -56,7 +59,7 @@ const addToCart = (product_id) => {
 
 
 const addToCartHTML = () => {
- if (!listCartHTML) return; 
+//  if (!listCartHTML) return; 
 listCartHTML.innerHTML = "";
 
 if (carts.length > 0) {
@@ -184,11 +187,16 @@ const initApp = () => {
     .then(response => response.json())
     .then(data => {
       products = data;
-      listProductHTML(startIndex); 
-      addToCartHTML();
+
+      if (productHtml) listProductHTML(startIndex);  // ✅ only if exists
+      if (listCartHTML) addToCartHTML();             // ✅ only if exists
     })
     .catch(error => console.error("Error loading products:", error));
 };
 
-initApp();
+
+document.addEventListener("DOMContentLoaded", () => {
+  initApp();
+});
+
 
